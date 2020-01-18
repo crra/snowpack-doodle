@@ -1,29 +1,43 @@
 {
-	"comments": false,
-	"presets": ["@babel/typescript"],
-	"plugins": [
-		["@babel/plugin-transform-react-jsx", { "pragma": "h" }],
-		["snowpack/assets/babel-plugin.js", {}],
-		"@babel/proposal-class-properties",
-		"@babel/proposal-object-rest-spread"
-	],
-	"env": {
-		"production": {
-			"presets": [
-				[
-					"minify",
-					{
-						"mangle": {
-							"topLevel": true,
-							"keepFnName": false,
-							"keepClassName": false
-						},
-						"keepFnName": false,
-						"keepClassName": false,
-						"removeConsole": true
-					}
-				]
-			]
-		}
-	}
+  "comments": false,
+  "presets": ["@babel/typescript"],
+  "plugins": [
+    [
+      "module-resolver",
+      {
+        "root": ["."],
+        "alias": {
+          "react": "preact/compat/dist/compat",
+          "react-dom": "preact/compat/dist/compat"
+        }
+      }
+    ],
+    ["@babel/plugin-transform-react-jsx"],
+    [
+      "snowpack/assets/babel-plugin.js",
+      { "optionalExtensions": true, "addVersion": false }
+    ],
+    "@babel/proposal-class-properties",
+    "@babel/proposal-object-rest-spread",
+    "@babel/plugin-syntax-dynamic-import"
+  ],
+  "env": {
+    "production": {
+      "presets": [
+        [
+          "minify",
+          {
+            "mangle": {
+              "topLevel": true,
+              "keepFnName": false,
+              "keepClassName": false
+            },
+            "keepFnName": false,
+            "keepClassName": false,
+            "removeConsole": true
+          }
+        ]
+      ]
+    }
+  }
 }

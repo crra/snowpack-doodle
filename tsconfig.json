@@ -1,14 +1,18 @@
 {
   "compilerOptions": {
-    "target": "es6",
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
+    "jsx": "preserve",
+    "target": "esnext",
     "moduleResolution": "node",
+    "module": "esnext",
 
     "rootDir": "./src",
     "outDir": "./dist",
 
     "baseUrl": ".",
     "paths": {
-      "/web_modules/*.js": ["node_modules/*", "web_modules/*.js"]
+      "/web_modules/*.js": ["node_modules/*", "web_modules/*"]
     }
   }
 }
