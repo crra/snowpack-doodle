@@ -5,13 +5,13 @@ https://hankchizljaw.com/wrote/a-modern-css-reset/
 *,
 *::before,
 *::after {
-	box-sizing: border-box;
+  box-sizing: border-box;
 }
 
 /* Remove default padding */
 ul[class],
 ol[class] {
-	padding: 0;
+  padding: 0;
 }
 
 /* Remove default margin */
@@ -29,37 +29,37 @@ figcaption,
 blockquote,
 dl,
 dd {
-	margin: 0;
+  margin: 0;
 }
 
 /* Set core body defaults */
 body {
-	min-height: 100vh;
-	scroll-behavior: smooth;
-	text-rendering: optimizeSpeed;
-	line-height: 1.5;
+  min-height: 100vh;
+  scroll-behavior: smooth;
+  text-rendering: optimizeSpeed;
+  line-height: 1.5;
 }
 
 /* Remove list styles on ul, ol elements with a class attribute */
 ul[class],
 ol[class] {
-	list-style: none;
+  list-style: none;
 }
 
 /* A elements that don't have a class get default styles */
 a:not([class]) {
-	text-decoration-skip-ink: auto;
+  text-decoration-skip-ink: auto;
 }
 
 /* Make images easier to work with */
 img {
-	max-width: 100%;
-	display: block;
+  max-width: 100%;
+  display: block;
 }
 
 /* Natural flow and rhythm in articles by default */
 article > * + * {
-	margin-top: 1em;
+  margin-top: 1em;
 }
 
 /* Inherit fonts for inputs and buttons */
@@ -67,17 +67,17 @@ input,
 button,
 textarea,
 select {
-	font: inherit;
+  font: inherit;
 }
 
 /* Remove all animations and transitions for people that prefer not to see them */
 @media (prefers-reduced-motion: reduce) {
-	* {
-		animation-duration: 0.01ms !important;
-		animation-iteration-count: 1 !important;
-		transition-duration: 0.01ms !important;
-		scroll-behavior: auto !important;
-	}
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
 }
 
 /**
@@ -85,57 +85,61 @@ Based on: https://codepen.io/mirisuzanne/pen/JjPeQYP?editors=0100
 */
 
 html {
-	font-family: -apple-system, system-ui, BlinkMacSystemFont, "Segoe UI",
-		Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji",
-		"Segoe UI Symbol";
-	font-size: 14px;
-	font-weight: 500;
+  font-family: -apple-system, system-ui, BlinkMacSystemFont, "Segoe UI",
+    Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji",
+    "Segoe UI Symbol";
+  font-size: 14px;
+  font-weight: 500;
 }
 
 #app {
-	min-height: 100vh;
-	display: grid;
-	grid-gap: 1em;
-	grid:
-		"header" auto
-		"nav" auto
-		"main" 1fr
-		"footer" auto / 1fr;
+  min-height: 100vh;
+  display: grid;
+  grid-gap: 1em;
+  grid:
+    "header" auto
+    "nav" auto
+    "main" 1fr
+    "footer" auto / 1fr;
 }
 
 @media (min-width: 40em) {
-	#app {
-		grid:
-			"header header" auto
-			"nav main" 1fr
-			"nav footer" auto / 12em 1fr;
-	}
+  #app {
+    grid:
+      "header header" auto
+      "nav main" 1fr
+      "nav footer" auto / 12em 1fr;
+  }
 }
 
 header {
-	grid-area: header;
+  grid-area: header;
 }
 nav {
-	grid-area: nav;
+  grid-area: nav;
 }
 main {
-	grid-area: main;
+  grid-area: main;
 }
 footer {
-	grid-area: footer;
+  grid-area: footer;
 }
 
 header,
 nav,
 main,
 footer {
-	background: #ddd;
-	padding: 1em;
+  background: #ddd;
+  padding: 1em;
+}
+
+.layout-note {
+  font-style: italic;
 }
 
 nav a {
-	display: block;
+  display: block;
 }
 nav a.active {
-	color: red;
+  color: red;
 }
