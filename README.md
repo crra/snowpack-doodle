@@ -11,5 +11,5 @@ Simple example that uses:
 ## Build
 
 ```sh
-npm run dev
+npm run start
 ```

@@ -1,7 +1,7 @@
 {
-  "name": "snowpack-example",
+  "name": "snowpack-doodle",
   "version": "1.0.0",
-  "description": "",
+  "description": "Sample project with: Preact, JSX, Fragment, Router, CSS Grid, Typescript, Babel",
   "main": "index.js",
   "dependencies": {
     "preact": "^10.2.1",
@@ -39,18 +39,18 @@
   "scripts": {
     "clean:prod": "node shell/remove.js \"./prod\"",
     "clean:dev": "node shell/remove.js \"./dist\"",
-    "build": "npm run build:js && npm run build:esm && npm run copy:static",
-    "build:js": "babel --extensions \".ts,.tsx,.js,.jsx\" src/ -d dist",
+    "build:dev": "npm run build:js:dev && npm run build:esm:dev && npm run copy:static",
+    "build:js:dev": "babel --extensions \".ts,.tsx,.js,.jsx\" src/ -d dist",
     "build:js:prod": "BABEL_ENV=production babel --extensions \".ts,.tsx\" src/ -d dist",
     "build:js:watch": "babel --extensions \".ts,.tsx,.js,.jsx\" src/ -d dist --watch",
     "build:esm:prod": "snowpack --optimize --no-source-map --include \"dist/**/*.js\" --dest dist/web_modules",
-    "build:esm": "snowpack --include \"dist/**/*.js\" --dest dist/web_modules",
+    "build:esm:dev": "snowpack --include \"dist/**/*.js\" --dest dist/web_modules",
     "copy:static": "cpx-fixed \"src/*.{html,css}\" ./dist",
     "copy:prod": "node shell/rename.js ./dist ./prod",
-    "start-watch": "npm run clean:dev && npm run build && npm run build:js:watch",
-    "server": "lite-server",
-    "dev": "concurrently --kill-others \"npm run start-watch\" \"npm run server\"",
-    "prod": "npm run clean:dev && npm run clean:prod && npm run build:js:prod && npm run build:esm:prod && npm run copy:prod"
+    "watch:dev": "npm run clean:dev && npm run build:dev && npm run build:js:watch",
+    "server:dev": "lite-server",
+    "start": "concurrently --kill-others \"npm run watch:dev\" \"npm run server:dev\"",
+    "prod": "npm run clean:dev && npm run clean:prod && npm run build:js:prod && npm run build:esm:prod && npm run copy:static && npm run copy:prod"
   },
   "keywords": [
     "snowpack",
