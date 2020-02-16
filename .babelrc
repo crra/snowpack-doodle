@@ -7,8 +7,9 @@
       {
         "root": ["."],
         "alias": {
-          "react": "preact/compat/dist/compat",
-          "react-dom": "preact/compat/dist/compat"
+          "react": "preact/compat",
+          "react-dom/test-utils": "preact/test-utils",
+          "react-dom": "preact/compat"
         }
       }
     ],
