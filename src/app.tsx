@@ -1,6 +1,6 @@
 import React, { Suspense, lazy } from "react";
 import ReactDOM from "react-dom";
-import { Switch, Route } from "wouter/preact/index";
+import { Switch, Route } from "wouter/preact";
 import Navigation from "./Molecules/Navigation";
 
 const FallbackCard = () => "Loading...";

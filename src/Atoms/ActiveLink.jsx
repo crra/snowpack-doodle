@@ -1,5 +1,5 @@
 import React from "react";
-import { Link, useRoute } from "wouter/preact/index";
+import { Link, useRoute } from "wouter/preact";
 
 export default props => {
   const [isActive] = useRoute(props.href);

@@ -13,11 +13,9 @@
         }
       }
     ],
-    ["@babel/plugin-transform-react-jsx"],
-    [
-      "snowpack/assets/babel-plugin.js",
-      { "optionalExtensions": true, "addVersion": false }
-    ],
+    "@babel/plugin-transform-react-jsx",
+    "babel-plugin-add-import-extension",
+    ["snowpack/assets/babel-plugin.js", { "optionalExtensions": true }],
     "@babel/proposal-class-properties",
     "@babel/proposal-object-rest-spread",
     "@babel/plugin-syntax-dynamic-import"
