@@ -47,7 +47,7 @@
     "build": "npm-run-all --sequential build:clean build:dependencies build:ts build:move_modules build:copy:assets build:rename",
     "build:clean": "node shell/remove.js \"./build\"",
     "build:dependencies": "snowpack --babel --optimize --clean --no-source-map --include \"src/**/*.{ts,tsx,.js,jsx}\"",
-    "build:ts": "BABEL_ENV=production babel src --out-dir build --extensions \".ts,.tsx,.js,.jsx\"",
+    "build:ts": "set BABEL_ENV=production&&babel src --out-dir build --extensions \".ts,.tsx,.js,.jsx\"",
     "build:copy:assets": "cpx-fixed \"src/*.{html,css}\" ./build",
     "build:move_modules": "node shell/rename.js \"web_modules\" \"build/web_modules\"",
     "build:rename": "node shell/rename.js \"build\" \"dist\""
